@@ -22,16 +22,16 @@ pipeline{
               echo "Building..."
               sh '''              
               rm -rf package-lock.json			  
-			  npm install -y
-			  stash "node_modules"
+			  npm install -y			  
               '''
+			  stash "node_modules"
             }
         }
         stage('Unit Test') {
             steps {
               echo "Building..."
-              sh '''              
 			  unstash "node_modules"
+              sh '''              			  
               npm run ng test --no-watch
               '''
             }
@@ -39,8 +39,8 @@ pipeline{
         stage('SonarQube') {    
             agent any   
             steps {
-              sh ''' 
-			  unstash "node_modules"
+              unstash "node_modules"
+			  sh '''
               npm run ng test --no-watch --code-coverage
               '''
 			  withSonarQubeEnv("sonarqube-scanner") {
