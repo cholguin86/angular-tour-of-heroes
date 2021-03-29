@@ -51,7 +51,7 @@ pipeline{
                 -Dsonar.exclusions=${EXCLUSIONS} \
                 -Dsonar.sources=src \
                 -Dsonar.sourceEncoding=UTF-8 \
-				-Dsonar.javascript.lcov.reportPaths=coverage/atlas-frontend/lcov.info"
+				-Dsonar.javascript.lcov.reportPaths=coverage/angular-tour-of-heroes/lcov.info"
               }                       
             }
         }       
