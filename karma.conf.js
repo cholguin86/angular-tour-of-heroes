@@ -26,7 +26,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['ChromeHeadless'],
-	customLaunchers: {
+	/*customLaunchers: {
         ChromeHeadlessNoSandbox: {
             base: 'ChromeHeadless',
             flags: [
@@ -34,7 +34,7 @@ module.exports = function (config) {
                 '--disable-web-security'
             ]
         }
-    },
+    },*/
     singleRun: true,
     restartOnFileChange: true
   });
