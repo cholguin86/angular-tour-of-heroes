@@ -48,8 +48,8 @@ pipeline{
                 -Dsonar.scm.disabled=true \
                 -Dsonar.exclusions=${EXCLUSIONS} \
                 -Dsonar.sources=src \
-                -Dsonar.sourceEncoding=UTF-8" \
-				-Dsonar.javascript.lcov.reportPaths=coverage/atlas-frontend/lcov.info
+                -Dsonar.sourceEncoding=UTF-8 \
+				-Dsonar.javascript.lcov.reportPaths=coverage/atlas-frontend/lcov.info"
               }                       
             }
         }       
