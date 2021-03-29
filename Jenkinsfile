@@ -38,7 +38,7 @@ pipeline{
             agent any   
             steps {
               sh '''              
-              npm ng test --no-watch --code-coverage
+              npm run ng test --no-watch --code-coverage
               '''
 			  withSonarQubeEnv("sonarqube-scanner") {
                 sh "${PATH_SONAR}/bin/sonar-scanner \
