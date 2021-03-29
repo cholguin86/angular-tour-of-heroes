@@ -41,7 +41,7 @@ pipeline{
             steps {
               unstash "node_modules"
 			  sh '''
-              npm run ng test --no-watch --code-coverage
+              npm run coverage
               '''
 			  withSonarQubeEnv("sonarqube-scanner") {
                 sh "${PATH_SONAR}/bin/sonar-scanner \
