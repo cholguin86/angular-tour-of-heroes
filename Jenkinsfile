@@ -30,7 +30,7 @@ pipeline{
             steps {
               echo "Building..."
               sh '''              
-              nmp run ng test --no-watch
+              npm run ng test --no-watch
               '''
             }
         }
@@ -38,7 +38,7 @@ pipeline{
             agent any   
             steps {
               sh '''              
-              nmp ng test --no-watch --code-coverage
+              npm ng test --no-watch --code-coverage
               '''
 			  withSonarQubeEnv("sonarqube-scanner") {
                 sh "${PATH_SONAR}/bin/sonar-scanner \
