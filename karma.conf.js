@@ -26,6 +26,15 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['ChromeHeadless'],
+	customLaunchers: {
+        ChromeHeadlessNoSandbox: {
+            base: 'ChromeHeadless',
+            flags: [
+                '--no-sandbox', // required to run without privileges in docker                
+                '--disable-web-security'
+            ]
+        }
+    },
     singleRun: true,
     restartOnFileChange: true
   });
